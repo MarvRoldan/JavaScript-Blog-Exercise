@@ -3,17 +3,7 @@
  * @author  TECHCareers by Manpower
  * @date    2020.03.31
  * @summary Iterates through blog articles and outputs an HTML representation of each.
- * 
- * Goals:
- * ======
- * - Output into the DOM.
- * - Use a template literal.
- * - Use a for...of loop.
- * - Instantiate an object or object(s) of a class.
- * - Add an element to an array.
- * - Loop through (iterate through) an array.
- * - If you are adding functions or using methods, use ES6 standard.
- */
+*/
 
 class Article {
     constructor(title = 'Blog Title', content = 'Lorem ipsum...') {
@@ -61,8 +51,8 @@ const blogArticles = [
     )
 ];
 
-// TODO: Add a new article to the array (add "SASS" inbetween the "CSS" and "JS" articles.)
+blogArticles.splice(3, 0, new Article("SASS"));
 
 for (let article of blogArticles) {
-    article.output( myElement );
+    article.output(myElement);
 }
