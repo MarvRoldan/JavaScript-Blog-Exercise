@@ -20,11 +20,19 @@ class Article {
         this.title = title;
         this.content = content;
     }
-    output() {
-        // TODO: Prepare output to the browser...
-        // TODO: Use template literals.
+    output(element = null) {
+        if (element !== null) {
+            element.innerHTML += `
+            <article>
+                <h2>${this.title}</h2>
+                <p>${this.content}</p>
+            </article>
+            `;
+        }
     }
 }
+
+const myElement = document.body;
 
 const blogArticles = [
     new Article(
@@ -56,5 +64,5 @@ const blogArticles = [
 // TODO: Add a new article to the array (add "SASS" inbetween the "CSS" and "JS" articles.)
 
 for (let article of blogArticles) {
-    // TODO: Loop through articles and output each of them to the browser.
+    article.output( myElement );
 }
